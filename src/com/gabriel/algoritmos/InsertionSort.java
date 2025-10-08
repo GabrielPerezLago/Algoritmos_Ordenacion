@@ -1,5 +1,10 @@
 package com.gabriel.algoritmos;
 
+import com.gabriel.orden.Final;
+
+import java.lang.reflect.Field;
+import java.util.stream.Stream;
+
 public class InsertionSort extends Thread {
     public int[]  arr;
 
@@ -8,10 +13,19 @@ public class InsertionSort extends Thread {
     }
 
     public void run() {
-        insertionSort(arr);
+        Final f = new Final();
+        String name = "Insertion sort";
+        try {
+            insertionSort(arr);
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+
+        f.setAlg(name);
     }
 
     public static void insertionSort(int[] arr) {
+
         for (int i = 1; i < arr.length; i++) {
             int clave = arr[i];
             int j = i - 1;

@@ -1,5 +1,7 @@
 package com.gabriel.algoritmos;
 
+import com.gabriel.orden.Final;
+
 public class SelectionSort extends Thread {
     public int[] arr;
 
@@ -8,10 +10,18 @@ public class SelectionSort extends Thread {
     }
 
     public void run() {
-        selectionSort(arr);
+        Final f = new Final();
+        String name = "Selection sort";
+        try {
+            selectionSort(arr);
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        f.setAlg(name);
     }
 
     public static void selectionSort(int[] arr) {
+
         int n = arr.length;
 
         for (int i = 0; i < n - 1; i++) {

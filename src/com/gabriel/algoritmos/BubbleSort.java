@@ -1,5 +1,7 @@
 package com.gabriel.algoritmos;
 
+import com.gabriel.orden.Final;
+
 public class BubbleSort extends Thread {
     public int[] arr;
 
@@ -8,10 +10,18 @@ public class BubbleSort extends Thread {
     }
 
     public void run() {
-        bubbleSort(arr);
+        Final f = new Final();
+        String name = "Bubble sort";
+        try {
+            bubbleSort(arr);
+        }catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        f.setAlg(name);
     }
 
     public static void bubbleSort(int[] arr) {
+
         int n = arr.length;
         boolean swapped;
         for (int i = 0; i < n - 1; i++) {
