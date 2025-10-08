@@ -1,24 +1,14 @@
 package com.gabriel.algoritmos;
 
+import java.sql.SQLSyntaxErrorException;
+
 public class Algoritmos extends Thread {
-    public int num;
+    public int n;
     public int[] arr;
 
-    Algoritmos(int num, int[] arr) {
-        this.num = num;
-    }
-
-
-    @Override
-    public void run() {
-        switch(num){
-            case 1: bubbleSort(arr);
-            break;
-            case 2: selectionSort(arr);
-            break;
-            case 3: insertionSort(arr);
-            break;
-        }
+    public Algoritmos(int n, int[] arr) {
+        this.n = n;
+        this.arr = arr;
     }
 
     public static void bubbleSort(int[] arr) {
@@ -37,8 +27,24 @@ public class Algoritmos extends Thread {
             if (!swapped) {
                 break;
             }
+            System.out.println("Bubble sort una vuelta");
+        }
+        System.out.println("Bubble sort ordenado");
+    }
+
+    @Override
+    public void run() {
+        switch(n){
+            case 1: bubbleSort(arr);
+                break;
+            case 2: selectionSort(arr);
+                break;
+            case 3: insertionSort(arr);
+                break;
         }
     }
+
+
 
     public static void selectionSort(int[] arr) {
         int n = arr.length;
@@ -54,7 +60,9 @@ public class Algoritmos extends Thread {
             int temp = arr[minIndex];
             arr[minIndex] = arr[i];
             arr[i] = temp;
+            System.out.println("Selection sort una vuelta");
         }
+        System.out.println("Selection sort ordenado");
     }
 
     public static void insertionSort(int[] arr) {
@@ -66,6 +74,8 @@ public class Algoritmos extends Thread {
                 j = j - 1;
             }
             arr[j + 1] = clave;
+            System.out.println("Insertion sort una vuelta");
         }
+        System.out.println("Insertion sort ordenado");
     }
 }
