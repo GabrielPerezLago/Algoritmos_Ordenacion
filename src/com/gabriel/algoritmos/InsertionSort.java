@@ -7,21 +7,22 @@ import java.util.stream.Stream;
 
 public class InsertionSort extends Thread {
     public int[]  arr;
+    public Final f ;
 
-    public InsertionSort(int[] arr) {
+    public InsertionSort(int[] arr,  Final f) {
         this.arr = arr;
+        this.f = f;
     }
 
     public void run() {
-        Final f = new Final();
+
         String name = "Insertion sort";
         try {
             insertionSort(arr);
+            f.setAlg(name);
         } catch (Exception ex) {
             ex.printStackTrace();
         }
-
-        f.setAlg(name);
     }
 
     public static void insertionSort(int[] arr) {

@@ -4,16 +4,18 @@ import com.gabriel.orden.Final;
 
 public class BubbleSort extends Thread {
     public int[] arr;
+    public Final f;
 
-    public BubbleSort(int[] arr) {
+    public BubbleSort(int[] arr, Final f) {
         this.arr = arr;
+        this.f = f;
     }
 
     public void run() {
-        Final f = new Final();
         String name = "Bubble sort";
         try {
             bubbleSort(arr);
+            f.setAlg(name);
         }catch (Exception ex) {
             ex.printStackTrace();
         }

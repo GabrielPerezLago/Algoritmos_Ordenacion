@@ -4,20 +4,21 @@ import com.gabriel.orden.Final;
 
 public class SelectionSort extends Thread {
     public int[] arr;
+    public Final f;
 
-    public SelectionSort(int[] arr) {
+    public SelectionSort(int[] arr,  Final f) {
         this.arr = arr;
+        this.f = f;
     }
 
     public void run() {
-        Final f = new Final();
         String name = "Selection sort";
         try {
             selectionSort(arr);
+            f.setAlg(name);
         } catch (Exception ex) {
             ex.printStackTrace();
         }
-        f.setAlg(name);
     }
 
     public static void selectionSort(int[] arr) {

@@ -7,13 +7,14 @@ public class Final{
     public List<String> data = new ArrayList<String>();
 
     public void setAlg(String alt){
-        data.add(alt);
+        if(!data.contains(alt)) {
+            data.add(alt);
+        }
     }
 
     public void show(){
-        for (String da : data){
-            int index = data.indexOf(da);
-            System.out.println("Posicion de " + da + " : " + (index + 1));
+        for (int i = 0; i < data.size(); i++) {
+            System.out.println("En la posicion : " + (i + 1) + ". Llego :  " + data.get(i));
         }
     }
 

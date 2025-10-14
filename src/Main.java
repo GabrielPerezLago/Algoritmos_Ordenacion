@@ -11,9 +11,9 @@ public class Main {
     public static void main(String[] args) throws IOException, InterruptedException {
         final int[] ARR = {1, 5, 7, 10, 2, 4, 8, 13, 9, 3};
         Final f = new Final();
-        BubbleSort bs = new BubbleSort(ARR);
-        SelectionSort ss = new SelectionSort(ARR);
-        InsertionSort is = new InsertionSort(ARR);
+        BubbleSort bs = new BubbleSort(ARR, f);
+        SelectionSort ss = new SelectionSort(ARR, f);
+        InsertionSort is = new InsertionSort(ARR, f);
 
         bs.start();
         ss.start();
